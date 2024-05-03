@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lobby pokdeng</title>
+    <link rel="stylesheet" href="/css/style_lobby.css">
+</head>
+<body class="all">
+    <div class="header">
+        <div class="person">
+            <img class="picture" src="image/PersonCircle.png" alt="รูปโปรไฟล์">
+            <div class="name" id="name">ชื่อผู้ใช้</div>
+        </div>
+        <div class="right-box">
+            <div class="money-setting">
+                <div class="frame-money">
+                    <div class="money">
+                        <img class="coin" src="image/coin.png" alt="">
+                        <div id="money">0.00</div>
+                        <div>฿</div>
+                    </div>
+                    <button class="popup">+</button>
+                </div>
+                <img class="setting" id="setting-menu" src="image/setting.png" alt="การตั้งค่า">
+            </div>
+        </div>
+    </div>
+    <div class="lobby">
+        <div class="banner">
+            <div class="header-banner">
+                <div class="box-search">
+                    <input class="search" type="search" id="nameroon" name="nameroon" placeholder="Search Name Room">
+                    <img class="find" src="image/find.png" alt="">
+                </div>
+                <div class="box-createroom">
+                    <div class="createroom">
+                        <a href="createroom.html">
+                            <img src="/image/create.png" alt="" width="30px"> Room
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <table id="myTable" class="section-room  ">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name Room</th>
+                        <th>Player</th>
+                        <th>Status</th>
+                        <th>Connect</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <form class="enter-password">
+        <input id="password" class="inputs" type="text" placeholder="Enter Password"><br><br>
+        <div class="click">
+            <button class="go-back">Back</button>
+            <button class="submit" type="button" onclick="checkpassword()">Submit</button>
+        </div>
+    </form>
+    <div class="popup-container">
+        <div class="popup-box">
+            <h1>ระบบเติมเงิน</h1>
+            <img src="/image/QR_CODE.jpg" alt="เกิดข้อผิดพลาด" width="200">
+            <button class="close-popup">เสร็จสิ้น</button>
+        </div>
+    </div>
+    <div class="contact-container">
+        <div class="contact-box">
+            <h1>ติดต่อแอดมิน</h1>
+            <img src="/image/contact.jpg" alt="เกิดข้อผิดพลาด" width="200">
+            <h3>หรือ add line: @pokkai888VIP</h3>
+            <h4 style="color: rgb(255, 22, 22);">อย่าลืม @ ด้วยข้างหน้า</h4>
+            <button class="close-contact">เสร็จสิ้น</button>
+        </div>
+    </div>
+    <div id="menu" class="dropdown-menu hidemenu">
+        <ul>
+            <li><a id="profile" href="#">Profile</a></li>
+            <li><a class="contact" href="#">Contact admin</a></li>
+            <li><a href="index.html">Log out</a></li>
+            <!-- <li class="close-setting">Close</li> -->
+        </ul>
+    </div>
+    <div id="profile-menu" class="all-profile hideprofile">
+        <div class="frame-profile">
+            <h1>PROFILE</h1>
+            <div id="close-profile" class="box-profile">
+                <div class="edit">
+                    <div class="show_image">
+                        <div class="profile-picture">
+                            <img src="/image/PersonCircle.png" alt="โปรไฟล๋์" width="100px">
+                        </div>
+                        <div class="show_user_id">
+                            <div>ID:</div>
+                            <div class="user_id" id="userID"></div>
+                        </div>
+                    </div>
+                    <div class="edit_profile">
+                        <div class="edit_image">
+                            <img src="/image/CameraFill.png" alt="เปลี่ยนรูป" width="20px">
+                        </div>
+                        <div class="edit_username">
+                            <img id="change_username" src="/image/PencilSquare.png" alt="เปลี่ยนชื่อ" width="20px">
+                        </div>
+                    </div>
+                    <div class="text">  
+                        <div>แก้ไขรูป</div>
+                        <div>แก้ไขชื่อ</div>
+                    </div>
+                </div>
+                <div class="profile-data">
+                    <div class="profile-username">
+                        <p>Username :</p> 
+                        <p id="profile-name">IXLAY</p>
+                    </div>
+                    <div class="profile-money">
+                        <p>Money :</p>
+                        <p id="profile-money">0</p>
+                    </div>
+                    <div class="level">
+                        <p>Level :</p>
+                        <p id="level"></p>
+                    </div>
+                    <div class="round">
+                        <p>Round :</p>
+                        <p id="round"></p>
+                    </div>
+                    <div class="winrate">
+                        <p>Win rate :</p>
+                        <p id="winrate"></p>
+                        <p>%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="all_change_username" class="all-change-username hidechangeusername">
+        <form id="close_change_username" class="change-username-menu">
+            <input class="inputs" type="text" id="new_username" placeholder="Change Username"><br><br>
+            <button class="submit" type="button" onclick="changeUsername()">Submit</buttom>
+        </form>
+    </div>
+    <br><br>
+
+    <script>
+        const setting = document.querySelector('#setting-menu');
+        const menu = document.querySelector('#menu');
+
+        setting.addEventListener('click', () => {
+            menu.classList.toggle('hidemenu')
+        })
+        
+        document.addEventListener('click', e => {
+            if (!menu.contains(e.target) && e.target !== setting) {
+                menu.classList.add('hidemenu')
+            }
+        })
+        
+    </script>
+    <script>
+        const profile = document.querySelector('#profile')
+        const profile_menu = document.querySelector('#profile-menu')
+        const close_profile = document.querySelector('#close-profile')
+
+        profile.addEventListener('click', () => {
+            profile_menu.classList.toggle('hideprofile')
+        })
+        
+        document.addEventListener('click', e => {
+            if (!close_profile.contains(e.target) && e.target !== profile) {
+                profile_menu.classList.add('hideprofile')
+            }
+        })
+    </script>
+    <script>
+        const change_username = document.querySelector('#change_username')
+        const all_change_username = document.querySelector('#all_change_username')
+        const close_change_username = document.querySelector('#close_change_username')
+
+        change_username.addEventListener('click', () => {
+            all_change_username.classList.toggle('hidechangeusername')
+        })
+        
+        document.addEventListener('click', e => {
+            if (!close_change_username.contains(e.target) && e.target !== change_username) {
+                all_change_username.classList.add('hidechangeusername')
+            }
+        })
+    </script>
+    <script>
+        const search = document.querySelector('.box-search input')
+
+        search.addEventListener('input', searchTable);
+
+        function searchTable() {
+            table_rows = document.querySelectorAll('tbody tr');
+            table_rows.forEach((row, i) => {
+                let table_data = row.textContent.toLowerCase(),
+                search_data = search.value.toLowerCase();
+
+                row.classList.toggle('hide', table_data.indexOf(search_data) < 0);
+                row.style.setProperty('--delay', i/25 + 's');
+            })
+        }
+    </script>
+    <script src="/app/script.js"></script>
+    <script src="/app/popup.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>        
+        function user_data() {
+            const id = localStorage.getItem('id');
+    
+            const data = { user_id : id } ;
+    
+            axios.post('http://127.0.0.1:3000/users', data)
+            .then(response => {
+                if (response.data.message === 'Successful') {
+                    const data = response.data.data
+                    document.getElementById('name').textContent = data[0].username;
+                    document.getElementById('profile-name').textContent = data[0].username;
+                    document.getElementById('money').textContent = `${ data[0].money}`;
+                    document.getElementById('profile-money').textContent = `${ data[0].money} ฿`;
+                    document.getElementById('userID').textContent = data[0].user_id;
+                    document.getElementById('level').textContent = data[0].level;
+                    document.getElementById('round').textContent = data[0].round;
+                    document.getElementById('winrate').textContent = data[0].winrate;
+                } else {
+                }
+            });
+        }
+        setInterval(user_data, 1000);
+        setInterval(showroom, 1000);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>room</title>
+    <link rel="stylesheet" href="/css/style_room.css">
+</head>
+<body class="all">
+    <div class="header">
+        <div class="person">
+            <img class="picture" id="profile" src="image/PersonCircle.png" alt="รูปโปรไฟล์">
+            <div class="name" id="name">anas</div>
+        </div>
+        <div class="right-box">
+            <div class="money-setting">
+                <div class="frame-money">
+                    <div class="money">
+                        <img class="coin" src="image/coin.png" alt="">
+                        <div id="money">0.00</div>
+                        <div>฿</div>
+                    </div>
+                    <button class="popup">+</button>
+                </div>
+                <img class="setting" id="setting-menu" src="image/setting.png" alt="การตั้งค่า">
+            </div>
+        </div>
+    </div>
+
+    <div class="gameplay">
+        <div class="table-container">
+            <div class="pretty">
+                <img class="girlgif" src="image/girl.gif" alt="pretty girl" width="250px">
+            </div>
+            <div class="group-player">
+                <div class="top">
+                    <div class="card-player5">
+                        <img src="/image/card/backcardred.svg" alt="card1" class="show">
+                        <img src="/image/card/backcardred.svg" alt="card2" class="show">
+                        <img src="/image/card/backcardred.svg" alt="addcard" class="show">
+                    </div>
+                    <div class="card-bot">
+                        <img src="/image/card/backcardred.svg" alt="card1" class="show">
+                        <img src="/image/card/backcardred.svg" alt="card2" class="show">
+                        <img src="/image/card/backcardred.svg" alt="addcard" class="show">
+                    </div>
+                    <div class="card-player1">
+                        <img src="/image/card/backcardred.svg" alt="card1" class="show">
+                        <img src="/image/card/backcardred.svg" alt="card2" class="show">
+                        <img src="/image/card/backcardred.svg" alt="addcard" class="show">
+                    </div>
+                </div>
+                <div class="player-top">
+                    <div class="frame-player5" id="frame-player5">
+                        <div class="data-player5" id="data-player5">
+                            <div class="name_data" id="name_player5">ชื่อผู้ใช้</div>
+                            <img src="/image/liner.png" alt="">
+                            <div class="name_data" id="money_player5">0 ฿</div>
+                            <div id="point5" style="opacity: 0;">0 point</div>
+                        </div>
+                        <img class="pic-player5" id="pic_player5" src="/image/no_player.png" alt="play-5" onclick="choose_chair(5)">
+                    </div>
+                    <div class="frame-player1">
+                        <img class="pic-player1" id="pic_player1" src="/image/no_player.png" alt="play-1" onclick="choose_chair(1)">
+                        <div class="data-player1" id="data-player1">
+                            <div class="name_data" id="name_player1">ชื่อผู้ใช้</div>
+                            <img src="/image/liner.png" alt="">
+                            <div class="name_data" id="money_player1">0 ฿</div>
+                            <div id="point1" style="opacity: 0;">0 point</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="middle">
+                    <div class="time" id="time">TIME</div>
+                    <form class="bet">
+                        <input id="bet-money" type="text" placeholder="Bet your money"><br><br>
+                        <div class="click">
+                            <button class="submit" type="button" onclick="bet_money()">BET</button>
+                        </div>
+                    </form>
+                    <div class="getAcard">
+                        <button id="getAcard" type="button" >get a card</button>
+                        <button>none</button>
+                    </div>
+                    <div class="cardmiddle">
+                        <div class="card-player4">
+                            <img src="/image/card/backcardred.svg" alt="card1" class="show">
+                            <img src="/image/card/backcardred.svg" alt="card2" class="show">
+                            <img src="/image/card/backcardred.svg" alt="addcard" class="show">
+                        </div>
+                        <div class="card-player3">
+                            <img src="/image/card/backcardred.svg" alt="card1" class="show">
+                            <img src="/image/card/backcardred.svg" alt="card2" class="show">
+                            <img src="/image/card/backcardred.svg" alt="addcard" class="show">
+                        </div>
+                        <div class="card-player2">
+                            <img src="/image/card/backcardred.svg" alt="card1" class="show">
+                            <img src="/image/card/backcardred.svg" alt="card2" class="show">
+                            <img src="/image/card/backcardred.svg" alt="addcard" class="show">
+                        </div>
+                    </div>
+                </div>
+                <div class="player-middle">
+                    <div class="frame-player4">
+                        <div class="data-player4" id="data-player4">
+                            <div class="name_data" id="name_player4">ชื่อผู้ใช้</div>
+                            <img src="/image/liner.png" alt="">
+                            <div class="name_data" id="money_player4">0 ฿</div>
+                            <div id="point4" style="opacity: 0;">0 point</div>
+                        </div>
+                        <img class="pic-player4" id="pic_player4" src="/image/no_player.png" alt="play-4" onclick="choose_chair(4)">
+                    </div>
+                    <div class="frame-player2">
+                        <img class="pic-player2" id="pic_player2" src="/image/no_player.png" alt="play-2" onclick="choose_chair(2)">
+                        <div class="data-player2" id="data-player2">
+                            <div class="name_data" id="name_player2">ชื่อผู้ใช้</div>
+                            <img src="/image/liner.png" alt="">
+                            <div class="name_data" id="money_player2">0 ฿</div>
+                            <div id="point2" style="opacity: 0;">0 point</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-bottom">
+                    <img class="pic-player3" id="pic_player3" src="/image/no_player.png" alt="play-3" onclick="choose_chair(3)">
+                    <div class="data-player3" id="data-player3">
+                        <div class="name_data" id="name_player3">ชื่อผู้ใช้</div>
+                        <img src="/image/liner.png" alt="">
+                        <div class="name_data" id="money_player3">0 ฿</div>
+                        <div id="point3" style="opacity: 0;">0 point</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-container">
+        <div class="popup-box">
+            <h1>ระบบเติมเงิน</h1>
+            <img src="/image/QR_CODE.jpg" alt="เกิดข้อผิดพลาด" width="200">
+            <button class="close-popup">เสร็จสิ้น</button>
+        </div>
+    </div>
+    <div id="menu" class="dropdown-menu hidemenu">
+        <a onclick="exitRoom()" href="lobby.html">Exit Room</a>
+    </div>
+
+    <script>
+        const setting = document.querySelector('#setting-menu');
+        const menu = document.querySelector('#menu');
+
+        setting.addEventListener('click', () => {
+            menu.classList.toggle('hidemenu')
+        })
+        
+        document.addEventListener('click', e => {
+            if (!menu.contains(e.target) && e.target !== setting) {
+                menu.classList.add('hidemenu')
+            }
+        })
+    </script>
+    <script src="/app/script.js"></script>
+    <script>
+        const showPopup = document.querySelector('.popup');
+        const popupContainer = document.querySelector('.popup-container');
+        const closePopup = document.querySelector('.close-popup');
+        showPopup.onclick = () => {
+            popupContainer.classList.add('active');
+        }
+        
+        closePopup.onclick = () => {
+            popupContainer.classList.remove('active');
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const username = localStorage.getItem('username');
+
+        document.getElementById('name').textContent = username;
+        
+        function user_data() {
+            const id = localStorage.getItem('id');
+    
+            const data = { user_id : id } ;
+    
+            axios.post('http://127.0.0.1:3000/users', data)
+            .then(response => {
+                if (response.data.message === 'Successful') {
+                    const data = response.data.data
+                    document.getElementById('name').textContent = data[0].username;
+                    document.getElementById('money').textContent = `${ data[0].money}`;
+                } else {
+                }
+            });
+        }
+        // user_data();
+        // show_chair();
+        setInterval(user_data, 1000);
+        setInterval(show_chair, 1000);
+    </script>
+    <script>
+
+        let intervalId;
+
+        function checkCountdown() {          
+
+            for (var i = 1; i < 6; i++) {
+                if (document.getElementById('name_player' + i).innerHTML == document.getElementById('name').innerHTML &&
+                    document.getElementById('money_player' + i).innerHTML != '0 ฿') {
+                    const betContainer = document.querySelector('.bet');
+                    const betbutton = document.querySelector('.click');
+
+                    betContainer.classList.remove('active');
+                    betbutton.classList.remove('active');
+                    }
+            }
+            if (document.getElementById('time').innerHTML == '0' && (localStorage.getItem("round") == '0')) {
+                    console.log('2')
+                    clearInterval(intervalId);
+                    console.log('3')
+                    start_game();
+                    console.log('4')
+            } 
+            
+        }
+
+        intervalId = setInterval(checkCountdown, 1000);
+
+        let interval2;
+
+        function checkBet() {
+            for (var i = 1; i < 6; i++) {
+                if (document.getElementById('money_player' + i).innerHTML != '0 ฿' ) {
+                    clearInterval(interval2);
+                    countdown()
+                }
+            }
+        }
+
+        interval2 = setInterval(checkBet, 1000);
+
+        function makeInterval() {
+            console.log('runs')
+            interval2 = setInterval(checkBet, 1000);
+            intervalId = setInterval(checkCountdown, 1000);
+        }
+
+    </script>
+</body>
+</html>

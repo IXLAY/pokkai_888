@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createAccount</title>
+    <link rel="stylesheet" href="css/style_account.css">
+</head>
+<body class="all">
+    <div class="test">
+        <img class="logo" src="image/logo.png" width="300" alt="logo">
+        <form method="post" >
+            <br>
+            <input class="name" type="text" id="username" name="username" placeholder="Username"><br><br>
+            <input class="name" type="password" id="password" name="password" placeholder="Password"><br><br>
+            <input class="date" type="date" id="date" name="date" placeholder="DD / MM / YY"><br><br>
+            <div class="OK_RESET">
+                <div class="ok">
+                    <input class="box_ok" id="checkbox" type="checkbox" value="OK">
+                    <label class="text_box_ok">ยอมรับข้อตกลงการใช้งาน !</label>
+                </div>
+                <input class="reset" type="reset" value="Reset">
+            </div><br><br>
+            <button class="submit" type="button" onclick="creatAccount()">Create Account</button>
+          </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/app/script.js"></script>
+</body>
+</html>

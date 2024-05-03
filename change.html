@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change password</title>
+    <link rel="stylesheet" href="css/style_change.css">
+</head>
+
+<body class="all">
+    <div class="test">
+        <img class="logo" src="image/logo.png" width="300" alt="logo">
+        <form method="post" name="change">
+            <br>
+            <input class="name" type="text" id="name" name="name" placeholder="Username"><br>
+            <input class="name" type="password" id="password" name="password" placeholder="Password"><br>
+            <input class="name" type="password" id="new_password" name="new_password" placeholder="New Password"><br>
+            <input class="name" type="password" id="confirm_new_password" name="confirm_new_password"
+                placeholder="Confirm New Password"><br>
+            <button class="submit" type="button" onclick="changePassword()">Change password</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/app/script.js"></script>
+</body>
+</html>

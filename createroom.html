@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createRoom</title>
+    <link rel="stylesheet" href="/css/style_createroom.css">
+</head>
+<body class="all">
+    <div class="header">
+        <div class="person">
+            <img class="picture" src="image/PersonCircle.png" alt="รูปโปรไฟล์">
+            <div class="name" id="name">ชื่อผู้ใช้</div>
+        </div>
+        <div class="right-box">
+            <div class="money-setting">
+                <div class="frame-money">
+                    <div class="money">
+                        <img class="coin" src="image/coin.png" alt="">
+                        <div id="money">0.00</div>
+                        <div>฿</div>
+                    </div>
+                    <button class="popup">+</button>
+                </div>
+                <img class="setting" id="setting-menu" src="image/setting.png" alt="การตั้งค่า">
+            </div>
+        </div>
+    </div>
+    <div class="lobby">
+        <div class="banner">
+            <a class="go_back" href="lobby.html"><img src="image/X.png" alt="กลับ"></a>
+            <p>Create Room</p>
+            <form>
+                <label>Name Room:</label><br>
+                <input id="room_name" class="inputs" type="text" placeholder="Character 1-24"><br><br>
+                <label style="margin-right: 33.5%;" >Password:</label><br>
+                <input id="room_password" class="inputs" type="text" placeholder="Character 1-8"><br><br><br>
+                <button class="submit" type="button" onclick="createRoom()">submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup-container">
+        <div class="popup-box">
+            <h1>ระบบเติมเงิน</h1>
+            <img src="image/QR_CODE.jpg" alt="เกิดข้อผิดพลาด" width="200">
+            <button class="close-popup">เสร็จสิ้น</button>
+        </div>
+    </div>
+    <div id="menu" class="dropdown-menu hidemenu">
+        <ul>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Contact admin</a></li>
+            <li><a href="index.html">Log out</a></li>
+            <!-- <li class="close-setting">Close</li> -->
+        </ul>
+    </div>
+
+    <script>
+        const setting = document.querySelector('#setting-menu');
+        const menu = document.querySelector('#menu');
+        setting.addEventListener('click', () => {
+            menu.classList.toggle('hidemenu')
+        })
+        
+        document.addEventListener('click', e => {
+            if (!menu.contains(e.target) && e.target !== setting) {
+                menu.classList.add('hidemenu')
+            }
+        })
+    </script>
+    <script>
+        const username = localStorage.getItem('username');
+        const money = localStorage.getItem('money');
+
+        document.getElementById('name').textContent = username;
+        document.getElementById('money').textContent = `${money}`;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/app/script.js"></script>
+    <script src="/app/popup.js"></script>
+    
+</body>
+</html>

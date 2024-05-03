@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="css/style_index.css">
+</head>
+<body class="all">
+    <div class="frame_all">
+        <img class="logo" src="image/logo.png" width="300" alt="logo">
+        <form name="login">
+            <br>
+            <input class="name" type="text" id="username" name="username" placeholder="Username"><br><br>
+            <input class="name" type="password" id="password" name="password" placeholder="Password"><br><br>
+            <button class="submit" type="button" onclick="Login()">Login</button><br><br>
+        </form>
+        <div class="buttom">
+            <a href="create_account.html" class="box-create">Create Account</a>
+            <a href="change.html" class="box-change">Change Password</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/app/script.js"></script>
+</body>
+</html>
